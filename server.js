@@ -4,6 +4,8 @@ const bcrypt = require('bcrypt');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 
+const port  = process.env.port || 3000;
+
 const users = [];
 
 app.get('/',(req,res)=>{
@@ -44,4 +46,4 @@ app.post('/users/login',jsonParser,async(req,res)=>{
     }
 })
 
-app.listen(3000);
+app.listen(port);
